@@ -1,19 +1,19 @@
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { SharedModule } from './../../shared/shared.module';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { catchError, Observable, of } from 'rxjs';
 
 import { AppMaterialModule } from '../../shared/app-material/app-material.module';
+import { CategoryPipe } from '../../shared/pipes/category.pipe';
 import { Course } from '../model/course';
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { CoursesService } from './../services/courses.service';
-import { Observable, catchError, of } from 'rxjs';
-import { CommonModule } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [AppMaterialModule, CommonModule, ErrorDialogComponent],
+  imports: [AppMaterialModule, CommonModule, ErrorDialogComponent, CategoryPipe],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })
