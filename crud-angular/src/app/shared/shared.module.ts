@@ -11,6 +11,7 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
     CommonModule
   ],
   exports: [
+    
   ]
 })
 export class SharedModule { }
